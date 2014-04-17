@@ -15,13 +15,17 @@
 
 ##################################################################
 # SETTINGS
+
+# set path to user's home
+USER_HOME=$(eval echo ~${SUDO_USER})
+
 # set path to uncrustify binary
 # UNCRUSTIFY="/usr/bin/uncrustify"
-UNCRUSTIFY="/usr/bin/uncrustify"
+UNCRUSTIFY="$USER_HOME/bin/uncrustify"
 
 # set uncrustify config location
 # CONFIG="/home/user/.config/uncrustify.cfg"
-CONFIG="/unspecified/"
+CONFIG="$USER_HOME/.config/uncrustify.cfg"
 
 # the source language: C, CPP, D, CS, JAVA, PAWN, VALA, OC, OC+
 # SOURCE_LANGUAGE="CPP"
@@ -29,7 +33,7 @@ SOURCE_LANGUAGE="OC"
 
 # remove any older patches from previous commits. Set to true or false.
 # DELETE_OLD_PATCHES=false
-DELETE_OLD_PATCHES=false
+DELETE_OLD_PATCHES=true
 
 # only parse files with the extensions in FILE_EXTS. Set to true or false.
 # if false every changed file in the commit will be parsed with Uncrustify.
@@ -39,7 +43,7 @@ PARSE_EXTS=true
 
 # file types to parse. Only effective when PARSE_EXTS is true.
 # FILE_EXTS=".c .h .cpp .hpp"
-FILE_EXTS=".c .h .cpp .hpp"
+FILE_EXTS=".h .m .mm"
 
 ##################################################################
 # There should be no need to change anything below this line.
